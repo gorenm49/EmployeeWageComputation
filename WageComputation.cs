@@ -5,7 +5,7 @@ namespace EmployeeWageComputation
     public class WageComputation
     {
         
-        const int EMP_PRESENT = 0, EMP_ABSENT = 1, EMP_WAGE_PER_HR = 20, FULL_DAY = 8 , PART_TIME = 4; 
+        const int EMP_PRESENT = 0, EMP_ABSENT = 1, EMP_WAGE_PER_HR = 20, FULL_DAY = 8 , PART_TIME = 4, WORK_DAY_PER_MONTH = 20; 
         int dayhr= 0, dailyWage=0;
 
         Random random = new Random();
@@ -36,6 +36,9 @@ namespace EmployeeWageComputation
             {
                 Console.WriteLine("Employee is Absent..");
             }
+
+            int monthlyWage = dailyWage * WORK_DAY_PER_MONTH;
+            Console.WriteLine("Employee Wage for a month: "+monthlyWage);
         }
     }
     
