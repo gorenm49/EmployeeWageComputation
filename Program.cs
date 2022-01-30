@@ -11,6 +11,7 @@ namespace EmployeeWageComputation
             WageComputation wageComputation = new WageComputation();
 
             wageComputation.employeeAttendence();
+            wageComputation.CalculateWage();
         }
     }
 }
