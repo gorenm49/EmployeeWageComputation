@@ -11,7 +11,7 @@ namespace EmployeeWageComputation
 
         int empHr = 0, totalEmpHr= 0, totalWorkingDays = 0;
 
-        public void CalculateWage()
+        public int CalculateWage()
         {
             while (totalEmpHr <= TOTAL_WORK_HR_FOR_MONTH && totalWorkingDays < WORK_DAY_IN_MONTH )
             {
@@ -42,7 +42,8 @@ namespace EmployeeWageComputation
             }
 
             int totalEmpWageForMonth = totalEmpHr * WORK_DAY_IN_MONTH;
-            System.Console.WriteLine("Monthly Wage for Employee is :"+totalEmpWageForMonth);    
+            System.Console.WriteLine("Monthly Wage for Employee is :"+totalEmpWageForMonth);   
+            return totalEmpWageForMonth; 
         }    
     }
     
