@@ -5,15 +5,15 @@ namespace EmployeeWageComputation
     public class WageComputation
     {
         
-        const int EMP_WAGE_PER_HR = 20, FULL_DAY = 8, PART_TIME = 4, F_DAY= 1, H_DAY = 0 , WORK_DAY_IN_MONTH =20, TOTAL_WORK_HR_FOR_MONTH = 100;
+        const int  FULL_DAY = 8, PART_TIME = 4, F_DAY= 1, H_DAY = 0;
 
         Random random = new Random();
 
         int empHr = 0, totalEmpHr= 0, totalWorkingDays = 0;
 
-        public int CalculateWage()
+        public int CalculateWage(string company, int empWagePerHr, int workDaysInMonth, int totalWorkHrForMonth)
         {
-            while (totalEmpHr <= TOTAL_WORK_HR_FOR_MONTH && totalWorkingDays < WORK_DAY_IN_MONTH )
+            while (totalEmpHr <= totalWorkHrForMonth && totalWorkingDays < workDaysInMonth )
             {
                 totalWorkingDays++;
 
@@ -41,7 +41,7 @@ namespace EmployeeWageComputation
                 System.Console.WriteLine("Total Working Days Of EMP: "+totalWorkingDays+"\n Working Hrs :"+totalEmpHr);
             }
 
-            int totalEmpWageForMonth = totalEmpHr * WORK_DAY_IN_MONTH;
+            int totalEmpWageForMonth = totalEmpHr * empWagePerHr;
             System.Console.WriteLine("Monthly Wage for Employee is :"+totalEmpWageForMonth);   
             return totalEmpWageForMonth; 
         }    
