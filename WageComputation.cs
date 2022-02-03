@@ -5,38 +5,24 @@ namespace EmployeeWageComputation
     public class WageComputation
     {
         
-        const int EMP_PRESENT = 0, EMP_ABSENT = 1, EMP_WAGE_PER_HR = 20, FULL_DAY = 8, PART_TIME = 4, F_DAY= 1, H_DAY = 0;
+        const int EMP_WAGE_PER_HR = 20, FULL_DAY = 8, PART_TIME = 4, F_DAY= 1, H_DAY = 0 , WORK_DAY_IN_MONTH =20;
 
         Random random = new Random();
 
-        int empHr = 0, totalEmpWage = 0;
-
-        int empCheck = random.Next(0, 3);
-
-        public void employeeAttendence()
-        {
-
-            if (this.empCheck == EMP_PRESENT)
-            {
-                Console.WriteLine("Employee is Present..");
-                int dailyWage = EMP_WAGE_PER_HR * FULL_DAY;
-                Console.WriteLine("Daily Wage is :"+dailyWage);
-            }
-            if (this.empCheck == EMP_ABSENT)
-            {
-                Console.WriteLine("Employee is Absent..");
-            }
-        }
+        int empHr = 0, empWageForDay= 0, totalEmpWageForMonth = 0;
 
         public void CalculateWage()
         {
+            int empCheck1 = random.Next(0, 3);
             
-            switch (empCheck)
+            switch (empCheck1)
             {
-                case FULL_DAY: 
+                case F_DAY: 
+                    Console.WriteLine("Employee is Present..");
                     this.empHr += FULL_DAY;
                     break;
-                case PART_TIME: 
+                case H_DAY: 
+                    Console.WriteLine("Employee is Present..");
                     this.empHr += PART_TIME;
                     break;
                 default:
@@ -45,8 +31,11 @@ namespace EmployeeWageComputation
                     break;
             }
 
-            this.totalEmpWage = empHr * EMP_WAGE_PER_HR;
-            Console.WriteLine(this.totalEmpWage);
+            this.empWageForDay = empHr * EMP_WAGE_PER_HR;
+            Console.WriteLine(this.empWageForDay);
+
+            totalEmpWageForMonth = empWageForDay * WORK_DAY_IN_MONTH;
+            System.Console.WriteLine("Monthly Wage for Employee is :"+totalEmpWageForMonth);    
         }    
     }
     
