@@ -10,7 +10,9 @@ namespace EmployeeWageComputation
 
             WageComputation wageComputation = new WageComputation();
 
-            wageComputation.CalculateWage();
+            wageComputation.CalculateWage("TATA", 19, 17, 108);
+            wageComputation.CalculateWage("TATA", 17, 18, 110);
+
         }
     }
 }
