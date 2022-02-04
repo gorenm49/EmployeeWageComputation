@@ -10,8 +10,22 @@ namespace EmployeeWageComputation
 
             WageComputation wageComputation = new WageComputation();
 
-            wageComputation.CalculateWage("TATA", 19, 17, 108);
-            wageComputation.CalculateWage("TATA", 17, 18, 110);
+            System.Console.WriteLine("Enter Company Count for you want to Calculate Wage:");
+            int op = int.Parse(Console.ReadLine());
+            string cName;
+            int hr, wdays, wHr;
+
+            for (int i = 1; i <= op; i++)
+            {
+                System.Console.WriteLine("For Company "+i+" Enter Details Company name, Work hour, working days and total working hours");
+                cName = Console.ReadLine();
+                hr = Convert.ToInt32(Console.ReadLine());
+                wdays = Convert.ToInt32(Console.ReadLine());
+                wHr = Convert.ToInt32(Console.ReadLine());
+                
+                wageComputation.CalculateWage(cName, hr, wdays,wHr);
+
+            }
 
         }
     }

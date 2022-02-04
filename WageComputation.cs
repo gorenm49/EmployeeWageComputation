@@ -11,9 +11,9 @@ namespace EmployeeWageComputation
 
         int empHr = 0, totalEmpHr= 0, totalWorkingDays = 0;
 
-        public int CalculateWage(string company, int empWagePerHr, int workDaysInMonth, int totalWorkHrForMonth)
+        public void CalculateWage(string company, int empWagePerHr, int workDaysInMonth, int totalWorkHrForMonth)
         {
-            while (totalEmpHr <= totalWorkHrForMonth && totalWorkingDays < workDaysInMonth )
+            while (totalEmpHr <= totalWorkHrForMonth && totalWorkingDays <= workDaysInMonth )
             {
                 totalWorkingDays++;
 
@@ -38,12 +38,13 @@ namespace EmployeeWageComputation
                         break;
                 }
                 totalEmpHr +=empHr;
-                System.Console.WriteLine("Total Working Days Of EMP: "+totalWorkingDays+"\n Working Hrs :"+totalEmpHr);
+                System.Console.WriteLine("Total Working Days Of EMP: "+totalWorkingDays+"\n Working Hrs in month is :"+empHr);
             }
 
-            int totalEmpWageForMonth = totalEmpHr * empWagePerHr;
-            System.Console.WriteLine("Monthly Wage for Employee is :"+totalEmpWageForMonth);   
-            return totalEmpWageForMonth; 
+            int totalEmpWageForMonth = totalEmpHr * workDaysInMonth;
+            System.Console.WriteLine("The wage by Company "+company+",  for the employee is : "+totalEmpWageForMonth);
+
+
         }    
     }
     
