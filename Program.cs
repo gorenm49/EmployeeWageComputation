@@ -19,8 +19,6 @@ namespace EmployeeWageComputation
 
             ArrayList companyList = new ArrayList();
 
-           // var companyList = new ArrayList();
-
             for (int i = 1; i <= op; i++)
             {
                 System.Console.WriteLine("For Company "+i+" Enter Details Company name, Work hour, working days and total working hours");
