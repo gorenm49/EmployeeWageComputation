@@ -2,7 +2,7 @@
 
 namespace EmployeeWageComputation
 {
-    public class program
+    public class MyClass
     {
         public static void Main(string[] args)
         {
