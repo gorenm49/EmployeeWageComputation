@@ -29,13 +29,13 @@ namespace EmployeeWageComputation
                 
                 companyList.Add(cName);
 
-                wageComputation.CalculateWage(cName, hr, wdays,wHr);
+                wageComputation.TotalWage(cName, hr, wdays,wHr);
             }
 
             foreach (var item in companyList)
             {
                     string store = string.Format($"List of Companies : {item}");
-                   System.Console.WriteLine(store);
+                    System.Console.WriteLine(store);
             }
 
         }

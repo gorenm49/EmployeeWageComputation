@@ -4,6 +4,6 @@ namespace EmployeeWageComputation
 {
     public interface IComputeEmpWage
     {
-        public void CalculateWage(string company, int empWagePerHr, int workDaysInMonth, int totalWorkHrForMonth);
+        public void TotalWage(string company, int empWagePerHr, int workDaysInMonth, int totalWorkHrForMonth);
     }
 }
