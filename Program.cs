@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;  
+
 
 namespace EmployeeWageComputation
 {
@@ -15,6 +17,10 @@ namespace EmployeeWageComputation
             string cName;
             int hr, wdays, wHr;
 
+            ArrayList companyList = new ArrayList();
+
+           // var companyList = new ArrayList();
+
             for (int i = 1; i <= op; i++)
             {
                 System.Console.WriteLine("For Company "+i+" Enter Details Company name, Work hour, working days and total working hours");
@@ -23,8 +29,15 @@ namespace EmployeeWageComputation
                 wdays = Convert.ToInt32(Console.ReadLine());
                 wHr = Convert.ToInt32(Console.ReadLine());
                 
-                wageComputation.CalculateWage(cName, hr, wdays,wHr);
+                companyList.Add(cName);
 
+                wageComputation.CalculateWage(cName, hr, wdays,wHr);
+            }
+
+            foreach (var item in companyList)
+            {
+                    string store = string.Format($"List of Companies : {item}");
+                   System.Console.WriteLine(store);
             }
 
         }
