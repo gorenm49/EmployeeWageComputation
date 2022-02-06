@@ -2,7 +2,7 @@ using System;
 
 namespace EmployeeWageComputation
 {
-    public class EmpWageBuilder
+    public class EmpWageBuilder : IComputeEmpWage
     {
         
         const int  FULL_DAY = 8, PART_TIME = 4, F_DAY= 1, H_DAY = 0;
